@@ -1,10 +1,12 @@
 // Event Schema
-// userID: integer(ref),  playlistID: integer, comment [ref: comment]
+// playlistID: integer, comment [ref: comment]
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const EventSchema = new Schema ({
-    //userID ref goes here
+    postedBy: {
+        type: mongoose.Schema.Types.ObjectId, ref: User
+    },
     title: {
         type: String,
         required: true

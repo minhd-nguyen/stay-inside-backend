@@ -43,6 +43,7 @@ require('./config/passport')(passport)
 
 // setup our routes
 app.use('/users', users)
+app.use('/event', events)
 
 // start our server
 app.listen(process.env.PORT || 3000, () => console.log(`With my toes on port ${process.env.PORT} it's such a lovely view 🎧 `))
