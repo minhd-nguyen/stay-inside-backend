@@ -18,7 +18,9 @@ const EventSchema = new Schema ({
         type: String
     },
     // playlistID goes here type: Int ref
-    // comment ref
+    // comments: {
+    //     type: mongoose.Schema.Types.ObjectId, ref: Comment
+    // }
 })
 
 module.exports = Event = mongoose.model('events', EventSchema)
