@@ -8,7 +8,7 @@ const bodyParser = require('body-parser')
 const app = express()
 
 // require router
-const users = require('./routes/api/users')
+const users = require('./routes/users')
 
 // middleware to allow to CORS requests
 app.use(function(req, res, next) {
@@ -42,7 +42,7 @@ app.use(passport.initialize())
 require('./config/passport')(passport)
 
 // setup our routes
-app.use('/api/users', users)
+app.use('/users', users)
 
 // start our server
 app.listen(process.env.PORT || 3000, () => console.log(`With my toes on port ${process.env.PORT} it's such a lovely view 🎧 `))

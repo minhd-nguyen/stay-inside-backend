@@ -7,7 +7,7 @@ const jwt = require('jsonwebtoken')
 const passport = require('passport')
 
 // load User model
-const User = require('../../models/User')
+const User = require('../models/User')
 
 // API ROUTES
 
