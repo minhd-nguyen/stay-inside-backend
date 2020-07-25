@@ -7,6 +7,7 @@ const Event = require('../models/Event')
 const User = require('../models/User')
 
 // API Routes
+
 // TODO: GET -- post events to home page
 router.get('/', (req, res) => {
     Event.find()
@@ -32,5 +33,18 @@ router.post('/create', (req, res) => {
 })
 
 // TODO: PUT -- edit said event
+router.put('/:id', (req, res) => {
+    Event.findByIdAndUpdate({ _id: req.params.id },
+        req.body,
+        {new: true}
+        )
+        .then(updateEvent => {
+            res.send(updateEvent)
+        })
+        .catch(error => {
+            res.send({message: 'Server error'})
+            console.error(error)
+    })
+})
 
 // TODO: DELETE -- delete said event
