@@ -1,10 +1,10 @@
 require('dotenv').config()
 const express = require('express')
 const router = express.Router()
-//const db = require('../models')
+// const db = require('../models')
 
 const Event = require('../models/Event')
-const User = require('../models/User')
+// const User = require('../models/User')
 
 // API Routes
 
@@ -47,4 +47,14 @@ router.put('/:id', (req, res) => {
     })
 })
 
-// TODO: DELETE -- delete said event
+// TODO: DELETE -- delete said events
+router.delete('/:id', (req, res) => {
+    Event.findByIdAndDelete({ _id: req.params.id})
+        .then(deleteEvent => {
+            res.send('Event Deleted')
+            console.log(deleteEvent)
+        }).catch(error => {
+            res.send({message: 'Server error'})
+            console.error(error)
+        })
+})
