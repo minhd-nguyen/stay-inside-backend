@@ -44,6 +44,8 @@ require('./config/passport')(passport)
 
 //  setup out routes
 app.use('/users', users)
+app.use('/comments', comments)
+
 
 // start our sever
 app.listen(process.env.PORT || 3000, () => console.log(`Server is running on ${process.env.PORT} smoothly 🏀 🏀 🏀`))
