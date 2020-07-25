@@ -8,6 +8,15 @@ const User = require('../models/User')
 
 // API Routes
 // TODO: GET -- post events to home page
+router.get('/', (req, res) => {
+    Event.find()
+        .then(events => {
+            res.send(events)
+        }).catch(error => {
+            res.send({message: 'Server error'})
+            console.error(error)
+        })
+})
 
 // TODO: POST -- add created event to db
 router.post('/create', (req, res) => {
