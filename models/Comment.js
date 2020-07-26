@@ -5,15 +5,15 @@ const Schema = mongoose.Schema;
 const CommentSchema = new Schema({
   name: {
     type: String,
-    required: true,
+    // required: true,
   },
   content: {
     type: String,
-    required: true,
+    // required: true,
   },
   eventId: {
     type: String,
-    required: true,
+    // required: true,
   },
   date: {
     type: Date,

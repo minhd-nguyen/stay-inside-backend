@@ -9,6 +9,7 @@ const app = express()
 
 //  require router
  const users = require('./routes/users')
+ const events = require('./routes/events')
  const comments = require('./routes/comments')
 
 //  middleware to CORS requests
@@ -44,6 +45,7 @@ require('./config/passport')(passport)
 
 //  setup out routes
 app.use('/users', users)
+app.use('/events', events)
 app.use('/comments', comments)
 
 
