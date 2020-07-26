@@ -7,7 +7,7 @@ const Comment = require('../models/Comment')
 // Show
 router.get('/', (req, res) => {
 
-    Comment.findById(req.params.id)
+    Comment.find()
       .then(comments => {
         res.send(comments)
       })
