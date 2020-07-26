@@ -1,10 +1,11 @@
+require('dotenv').config()
 const express = require('express')
 const router = express.Router()
 const Comment = require('../models/Comment')
 
 
 // Show
-router.get('/:id', (req, res) => {
+router.get('/', (req, res) => {
 
     Comment.findById(req.params.id)
       .then(comments => {
@@ -53,4 +54,4 @@ router.delete('/:id', (req, res) => {
     .catch(err => console.error(err))
 })
 
-module.exports = router;
+module.exports = router
