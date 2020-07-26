@@ -16,7 +16,6 @@ router.get('/:id', (req, res) => {
   
 // Create
 router.post('/', (req, res) => {
-  
   // check the body of the request for empty string and remove them from the body
   Comment.create(req.body)
     .then(newComment => {
