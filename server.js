@@ -48,4 +48,3 @@ app.use('/events', events)
 
 // start our server
 app.listen(process.env.PORT || 3000, () => console.log(`With my toes on port ${process.env.PORT} it's such a lovely view 🎧 `))
-
