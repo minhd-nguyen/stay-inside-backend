@@ -2,11 +2,13 @@
 // playlistID: integer
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
+const { ObjectId } = mongoose.Types
 
 const EventSchema = new Schema ({
-    postedBy: [{
-        type: mongoose.Schema.Types.ObjectId, ref: 'users'
-    }],
+    postedBy: {
+        type: ObjectId, 
+        ref: 'User'
+    },
     title: {
         type: String,
         required: true
@@ -19,8 +21,9 @@ const EventSchema = new Schema ({
     },
     // playlistID goes here type: Int ref
     comments: [{
-        type: mongoose.Schema.Types.ObjectId, ref: 'comments'
+        type: ObjectId,
+        ref: 'Comment'
     }]
 })
 
-module.exports = Event = mongoose.model('events', EventSchema)
+module.exports = Event = mongoose.model('Event', EventSchema)
