@@ -16,7 +16,7 @@ router.get('/test', function(req, res) {
     res.json({msg: 'Users endpoint working A okay'})
 })
 
-// STRETCH: TODO: SEARCH FOR USERS VIA SEARCH BAR
+// STRETCH: SEARCH FOR USERS VIA SEARCH BAR
 router.get('/search', (req, res) => {
     User.findOne({name: req.body.name})
     .then(searchedUser => {
