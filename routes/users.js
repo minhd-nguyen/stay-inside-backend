@@ -91,3 +91,4 @@ router.post('/login', function (req, res) {
 // GET if already logged in, set user data to current
 
 module.exports = router
+
