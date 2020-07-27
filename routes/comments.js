@@ -16,7 +16,12 @@ router.get('/', (req, res) => {
   
 // Create
 router.post('/', (req, res) => {
+  
   // check the body of the request for empty string and remove them from the body
+  console.log('🏈')
+  console.log(req.body)
+  console.log('🏈')
+  // res.send(req.body)
   Comment.create(req.body)
     .then(newComment => {
       res.send(newComment)
@@ -48,4 +53,5 @@ router.delete('/:id', (req, res) => {
     })
     .catch(err => console.error(err))
 })
+
 module.exports = router
