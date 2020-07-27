@@ -23,7 +23,11 @@ const EventSchema = new Schema ({
     comments: [{
         type: ObjectId,
         ref: 'Comment'
-    }]
+    }],
+    date: {
+        type: Date,
+        default: Date.now()
+    }
 })
 
 module.exports = Event = mongoose.model('Event', EventSchema)
