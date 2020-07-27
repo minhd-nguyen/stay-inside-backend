@@ -4,14 +4,17 @@ const router = express.Router()
 const Comment = require('../models/Comment')
 
 
-// Show
-router.get('/', (req, res) => {
-
-    Comment.find()
-      .then(comments => {
-        res.send(comments)
-      })
-      .catch(err => console.error(err))
+// Index
+router.get('/', async function index(req, res) {
+  try {
+      const comments = await Comment.find()
+          .populate('postedBy', 'name')
+      res.json(comments)
+  }
+  catch(error) {
+      console.log(error)
+      res.sendStatus(500)
+  }
 })
   
 // Create
