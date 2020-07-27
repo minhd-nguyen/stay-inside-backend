@@ -25,7 +25,7 @@ app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 
 // config our db
-const db = process.env.MONGOD_URI
+const db = process.env.MONGODB_URI
 
 // connect to mongodb (using Atlas)
 mongoose.connect(db)

@@ -4,7 +4,7 @@ async function index(req, res) {
     try {
         const comments = await Comment.findOne()
             .populate('postedBy', 'name')
-        res.json(comments)
+        res.send(comments)
     }
     catch(error) {
         console.log(error)
