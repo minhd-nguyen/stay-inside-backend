@@ -1,31 +1,26 @@
-// Event Schema
+// Track Schema
 // playlistID: integer, comment [ref: comment]
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const EventSchema = new Schema ({
-    postedBy: {
-        type: mongoose.Schema.Types.ObjectId, ref: User
-    },
-    title: {
+const TrackSchema = new Schema ({
+    
+    name: {
         type: String,
-        required: true
     },
-    eventLink: {
+    artist: {
         type: String
     },
-    description: {
+    album: {
         type: String
+    },
+    playlistId: {
+        type: Number
     },
     // playlistID goes here type: Int ref
     comments: [{
-        type: ObjectId,
-        ref: 'Comment'
-    }],
-    date: {
-        type: Date,
-        default: Date.now()
-    }
+        type: mongoose.Schema.Types.ObjectId, ref: 'comments'
+    }]
 })
 
 module.exports = Event = mongoose.model('events', EventSchema)
