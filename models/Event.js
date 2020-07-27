@@ -19,7 +19,10 @@ const EventSchema = new Schema ({
     description: {
         type: String
     },
-    // playlistID goes here type: Int ref
+    playlistId: {
+        type: ObjectId,
+        ref: 'Track'
+    },
     comments: [{
         type: ObjectId,
         ref: 'Comment'
