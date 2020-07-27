@@ -2,6 +2,7 @@
 // playlistID: integer, comment [ref: comment]
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
+const { ObjectId } = mongoose.Types
 
 const TrackSchema = new Schema ({
     
@@ -19,8 +20,9 @@ const TrackSchema = new Schema ({
     },
     // playlistID goes here type: Int ref
     comments: [{
-        type: mongoose.Schema.Types.ObjectId, ref: 'comments'
+        type: ObjectId, 
+        ref: 'comments'
     }]
 })
 
-module.exports = Event = mongoose.model('events', EventSchema)
+module.exports = Track = mongoose.model('Track', TrackSchema)

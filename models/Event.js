@@ -2,10 +2,12 @@
 // playlistID: integer, comment [ref: comment]
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
+const { ObjectId } = mongoose.Types
 
 const EventSchema = new Schema ({
     postedBy: {
-        type: mongoose.Schema.Types.ObjectId, ref: User
+        type: ObjectId,
+         ref: 'User'
     },
     title: {
         type: String,
@@ -28,4 +30,4 @@ const EventSchema = new Schema ({
     }
 })
 
-module.exports = Event = mongoose.model('events', EventSchema)
+module.exports = Event = mongoose.model('Event', EventSchema)

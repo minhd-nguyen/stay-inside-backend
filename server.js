@@ -25,7 +25,7 @@ app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 
 //  config our DB
-const db = process.env.MONGODB_URI
+const db = process.env.MONGOD_URI
 
 // connect to Mongodb( using Atlas)
 mongoose.connect(db)
@@ -50,4 +50,4 @@ app.use('/comments', comments)
 
 
 // start our sever
-app.listen(process.env.PORT || 3000, () => console.log(`Server is running on ${process.env.PORT} smoothly 🏀 🏀 🏀`))
+app.listen(process.env.PORT || 3000, () => console.log(`With my toes on port ${process.env.PORT} its such a lovely view 🎧`))
