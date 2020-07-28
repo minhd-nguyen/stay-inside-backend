@@ -2,7 +2,7 @@ require('dotenv').config()
 const express = require('express')
 const router = express.Router()
 const Spotify = require('node-spotify-api')
-const { search } = require('../routes')
+// const { search } = require('../routes')
 
 // create a API Spotify Client
 let spotify = new Spotify({

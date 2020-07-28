@@ -17,12 +17,12 @@ const TrackSchema = new Schema ({
     },
     playlistId: {
         type: Number
-    },
+    }
     // playlistID goes here type: Int ref
-    comments: [{
-        type: ObjectId, 
-        ref: 'comments'
-    }]
+    // comments: [{
+    //     type: ObjectId, 
+    //     ref: 'comments'
+    // }]
 })
 
 module.exports = Track = mongoose.model('Track', TrackSchema)
