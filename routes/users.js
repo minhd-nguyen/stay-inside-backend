@@ -13,15 +13,28 @@ const User = require('../models/User');
 // GET api/users/test (Public)
 router.get('/test', (req, res) => res.json({msg: 'Users Endpoint Ok'}));
 
+// STRETCH: SEARCH FOR USERS VIA SEARCH BAR
+router.get('/search', (req, res) => {
+    User.findOne({name: req.body.name})
+    .then(searchedUser => {
+        if (!searchedUser) {
+            res.send('no user by that name, please try again')
+        } else {
+            res.send(searchedUser)
+        }
+    }).catch(error => {
+        res.send({message: 'Server error, please try again'})
+        console.log(error)
+    })
+})
+
 // GET api/users/register (Public)
 router.post('/register', (req, res) => {
   // Find User By Email
   User.findOne({ email: req.body.email })
     .then(user => {
-      // If email already exists, send 400 response
       if(user) {
         return res.status(400).json({email: 'Email already exists'});
-        // If email does not already exist, create new user
       } else {
         // Get avatar from Gravatar
         const avatar = gravatar.url(req.body.email, {
@@ -48,7 +61,6 @@ router.post('/register', (req, res) => {
               .catch(err => console.log(err));
           })
         })
-
       }
     })
 });
