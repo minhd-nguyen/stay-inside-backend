@@ -70,7 +70,7 @@ router.post('/', function(req, res) {
             // Return results to the view
             // console.log(results);
             // console.log('🎳');
-            res.render('/search', {results: results});
+            res.send({results: results});
         })
         .catch(function (err) {
             console.log(err);
@@ -86,7 +86,7 @@ router.get('/:id', (req, res) => {
     .then(function(data) {
     //   console.log(data); 
     //   console.log('🎡')
-      res.render('playlists/tracks', {results: data.items})
+      res.send({results: data.items})
     })
     .catch(function(err) {
     console.error('Error occurred: ' + err); 
