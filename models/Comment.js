@@ -16,6 +16,10 @@ const CommentSchema = new Schema({
     type: String,
     required: true,
   },
+  eventId: {
+    type: String,
+    required: true
+  },
   date: {
     type: Date,
     default: Date.now()
