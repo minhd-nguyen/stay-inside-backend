@@ -25,8 +25,4 @@ const TrackSchema = new Schema ({
     // }]
 })
 
-<<<<<<< HEAD
-module.exports = Track = mongoose.model('events', TrackSchema)
-=======
 module.exports = Track = mongoose.model('Track', TrackSchema)
->>>>>>> e45c3f8dbcfe90f9fdf4ac109dea4f4a15d53106
