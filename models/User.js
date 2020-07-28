@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-
+const { ObjectId } = mongoose.Types
 // User Schema
 const UserSchema = new Schema({
 
@@ -27,6 +27,10 @@ const UserSchema = new Schema({
     isFriend: {
       type: Boolean,
       default: false
+    },
+    event: {
+      type: ObjectId,
+      ref: 'Event'
     }
   });
 
