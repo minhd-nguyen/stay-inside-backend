@@ -28,6 +28,19 @@ router.get('/search', (req, res) => {
     })
 })
 
+// GET api/users/current (Private)
+router.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
+  // res.json({ msg: 'Success' })
+  // res.json(req.user);
+  res.json({
+    id: req.user.id,
+    name: req.user.name,
+    email: req.user.email,
+    avatar: req.user.avatar,
+  })
+});
+
+
 // GET api/users/register (Public)
 router.post('/register', (req, res) => {
   // Find User By Email
@@ -99,16 +112,5 @@ router.post('/login', (req, res) => {
     })
 });
 
-// GET api/users/current (Private)
-router.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
-  // res.json({ msg: 'Success' })
-  // res.json(req.user);
-  res.json({
-    id: req.user.id,
-    name: req.user.name,
-    email: req.user.email,
-    avatar: req.user.avatar,
-  })
-});
 
 module.exports = router;

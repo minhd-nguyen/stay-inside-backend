@@ -28,8 +28,14 @@ const EventSchema = new Schema ({
         ref: 'Comment'
     }],
     date: {
-        type: Date,
-        default: Date.now()
+        type: String,
+        default: new Date(),
+        required: true
+    },
+    time: {
+        type: String,
+        default: new Date(),
+        required: true
     }
 })
 
