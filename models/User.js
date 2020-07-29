@@ -27,10 +27,6 @@ const UserSchema = new Schema({
     isFriend: {
       type: Boolean,
       default: false
-    },
-    event: {
-      type: ObjectId,
-      ref: 'Event'
     }
   });
 
