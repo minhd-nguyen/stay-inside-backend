@@ -5,9 +5,9 @@ const Comment = require('../models/Comment')
 
 
 // Index
-router.get('/', async function index(req, res) {
+router.post('/eventcomments', async function index(req, res) {
   try {
-      const comments = await Comment.find()
+      const comments = await Comment.find({eventId: req.body.data.event})
           .populate('postedBy', 'name')
       res.json(comments)
   }
