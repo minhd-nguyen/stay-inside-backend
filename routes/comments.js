@@ -18,7 +18,7 @@ router.post('/eventcomments', async function index(req, res) {
 })
   
 // Create
-router.post('/eventcomments', (req, res) => {
+router.post('/', (req, res) => {
   
   Comment.create(req.body)
     .then(newComment => {
