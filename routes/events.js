@@ -3,12 +3,25 @@ const express = require('express')
 const router = express.Router()
 
 const Event = require('../models/Event')
+const { route } = require('./comments')
 
 // API ROUTES
 
-// GET -- post events to home page
+// GET -- post to home page
 router.get('/', (req, res) => {
     Event.find()
+    .populate('comments')
+    .then(events => {
+        res.send(events)
+    }).catch(error => {
+        res.send({message: 'Server error'})
+        console.error(error)
+    })
+})
+
+// POST -- post events to users page
+router.post('/', (req, res) => {
+    Event.find({postedBy: req.body.data.user.id})
         .populate('comments')
         .then(events => {
             res.send(events)
