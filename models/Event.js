@@ -6,8 +6,8 @@ const { ObjectId } = mongoose.Types
 
 const EventSchema = new Schema ({
     postedBy: {
-        type: ObjectId, 
-        ref: 'User'
+        type: ObjectId,
+         ref: 'User'
     },
     title: {
         type: String,
@@ -19,7 +19,10 @@ const EventSchema = new Schema ({
     description: {
         type: String
     },
-    // playlistID goes here type: Int ref
+    playlistId: {
+        type: ObjectId,
+        ref: 'Track'
+    },
     comments: [{
         type: ObjectId,
         ref: 'Comment'
