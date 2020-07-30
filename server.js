@@ -21,17 +21,26 @@ app.use(function(req, res, next) {
     next()
 })
 
+//  config our DB
+const uri = process.env.MONGOD_URI
+
+// Mongo Atlas connect to db
+const MongoClient = require('mongodb').MongoClient;
+const client = new MongoClient(uri, { useNewUrlParser: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
+
+// connect to mongodb (using Atlas)
+mongoose.connect(uri)
+    .then((() => console.log('MongoDB connected... 🥭')))
+    .catch(err => console.log(err))
+
 // bodyParser middleware
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
-
-//  config our DB
-const db = process.env.MONGOD_URI
-
-// connect to mongodb (using Atlas)
-mongoose.connect(db)
-    .then((() => console.log('MongoDB connected... 🥭')))
-    .catch(err => console.log(err))
 
 // test routing
 app.get('/', (req, res) => {
