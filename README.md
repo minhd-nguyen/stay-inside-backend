@@ -44,7 +44,7 @@
 - none at this time
 
 ## Roadblocks
-- difficulties referencing schemas properly
-- updating many schemas as needed
+- Difficulties referencing schemas properly.
+- There were many updates to schemas throughout project that weren't anticipated.
 
 
