@@ -30,8 +30,7 @@ router.get('/search', (req, res) => {
 
 // GET api/users/current (Private)
 router.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
-  // res.json({ msg: 'Success' })
-  // res.json(req.user);
+
   res.json({
     id: req.user.id,
     name: req.user.name,
