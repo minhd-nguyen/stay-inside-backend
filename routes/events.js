@@ -33,17 +33,14 @@ router.post('/', (req, res) => {
 
 // POST -- add created event to db
 router.post('/create', (req, res) => {
+
     const body = req.body
-    console.log(req.body.eventLink + '✅')
-    
     let currentUrl = req.body.eventLink;
     let newUrl = currentUrl.replace(/^https?:\/\//,'')
     body.eventLink = newUrl
 
     Event.create(body)
         .then(newEvent => {
-            console.log(req.body.eventLink + '😥')
-            console.log(newEvent)
             res.send(newEvent)
         }).catch(error => {
             res.send({message: 'Server error'})
