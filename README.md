@@ -40,6 +40,38 @@
     - [ ] Invite specific people to your events
     - [ ] Add an image to their profile
 
+## Routes
+## Routes: Users
+ Method | Path | Purpose |
+| ------ | -------------- | -------------------------------- |
+| GET | `/search` | search for other users |
+| GET | `/current` | get information for current user and jwt token |
+| POST | `/register` | register users |
+| POST | `/login` | log user in |
+
+## Routes: Events
+Method | Path | Purpose |
+| ------ | -------------- | -------------------------------- |
+| GET | `/` | get events for home page |
+| POST | `/` | post events to user page |
+| POST | `/create` | Create event |
+| PUT | `/:id` | Edit events |
+| DELETE | `/:id` | Delete events |
+
+## Routes: Comments
+Method | Path | Purpose |
+| ------ | -------------- | -------------------------------- |
+| POST | `/eventcomments` | get specific comments for specific events |
+| POST | `/` | Create comment |
+| PUT | `/:id` | Edit comment |
+| DELETE | `/:id` | Delete events |
+
+## Routes: tracks (Spotify API)
+Method | Path | Purpose |
+| ------ | -------------- | -------------------------------- |
+| POST | `/` | Search for music |
+| GET | `/:id` | view tracks inside album |
+
 ## Known Bugs
 - none at this time
 
