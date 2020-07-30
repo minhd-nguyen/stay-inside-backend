@@ -10,9 +10,6 @@ const passport = require('passport');
 // Load User Model
 const User = require('../models/User');
 
-// GET api/users/test (Public)
-router.get('/test', (req, res) => res.json({msg: 'Users Endpoint Ok'}));
-
 // STRETCH: SEARCH FOR USERS VIA SEARCH BAR
 router.get('/search', (req, res) => {
     User.findOne({name: req.body.name})
