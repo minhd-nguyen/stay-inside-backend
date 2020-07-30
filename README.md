@@ -22,12 +22,12 @@
 
 ## MVP
 - Users will be able to:
-    - [ ] Login/Signup
-    - [ ] Have a personalized profile page
-    - [ ] View a homepage that displays all events
-        - [ ] Comment on event posts
-    - [ ] Create events
-        - [ ] Give a title, description, and date of the event
+    - [✅] Login/Signup
+    - [✅] Have a personalized profile page
+    - [✅] View a homepage that displays all events
+        - [✅] Comment on event posts
+    - [✅] Create events
+        - [✅] Give a title, description, and date of the event
 
 
 ## Stretch Goals
