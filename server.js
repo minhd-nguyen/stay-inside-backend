@@ -26,10 +26,18 @@ app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 
 //  config our DB
-const db = process.env.MONGOD_URI
+const uri = process.env.MONGOD_URI
+
+const MongoClient = require('mongodb').MongoClient;
+const client = new MongoClient(uri, { useNewUrlParser: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
 
 // connect to Mongodb( using Atlas)
-mongoose.connect(db)
+mongoose.connect(uri)
     .then((() => console.log('MongoDB conneted...🏈')))
     .catch(err => console.log(err))
 
