@@ -6,6 +6,7 @@ const bodyParser = require('body-parser')
 
 // initialize Express server
 const app = express()
+const User = require("./models/User")
 
 //  require router
  const users = require('./routes/users')
