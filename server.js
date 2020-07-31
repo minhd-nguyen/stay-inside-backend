@@ -25,12 +25,8 @@ app.use(function(req, res, next) {
 //  config our DB
 const uri = process.env.MONGOD_URI
 
-<<<<<<< HEAD
-// Mongo Atlas connect to db
-=======
 //console.log(uri)
 
->>>>>>> 42eb86b42dddd854eded2eee27dda55e3767d8ec
 const MongoClient = require('mongodb').MongoClient;
 const client = new MongoClient(uri, { useNewUrlParser: true });
 client.connect(err => {
@@ -39,15 +35,9 @@ client.connect(err => {
   client.close();
 });
 
-<<<<<<< HEAD
-// connect to mongodb (using Atlas)
-mongoose.connect(uri)
-    .then((() => console.log('MongoDB connected... 🥭')))
-=======
 // connect to Mongodb( using Atlas)
 mongoose.connect(uri)
     .then((() => console.log('MongoDB conneted...🏈')))
->>>>>>> 42eb86b42dddd854eded2eee27dda55e3767d8ec
     .catch(err => console.log(err))
 
 // bodyParser middleware
