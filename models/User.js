@@ -28,7 +28,11 @@ const UserSchema = new Schema({
     isFriend: {
       type: Boolean,
       default: false
+    },
+    event: {
+      type: ObjectId,
+      ref: 'Event'
     }
   });
 
-module.exports = User = mongoose.model('User', UserSchema);
+module.exports = mongoose.model('User', UserSchema);
