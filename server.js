@@ -23,7 +23,7 @@ app.use(function(req, res, next) {
 })
 
 //  config our DB
-const uri = process.env.MONGOD_URI
+const uri = process.env.MONGODB_URI
 
 //console.log(uri)
 
