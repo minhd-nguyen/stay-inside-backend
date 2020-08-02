@@ -36,6 +36,9 @@ router.get('/current', passport.authenticate('jwt', { session: false }), (req, r
   })
 });
 
+router.get('/test', (req, res) => {
+  console.log("successful test")
+})
 
 // GET api/users/register (Public)
 router.post('/register', (req, res) => {
