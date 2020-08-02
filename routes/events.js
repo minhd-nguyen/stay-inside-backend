@@ -31,12 +31,6 @@ router.post('/', (req, res) => {
         })
 })
 
-// Get 
-
-router.get('/create/test', (req, res) => {
-    res.send("test")
-})
-
 // POST -- add created event to db
 router.post('/create', (req, res) => {
 
