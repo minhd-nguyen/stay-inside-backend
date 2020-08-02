@@ -22,6 +22,7 @@ router.post('/', (req, res) => {
   
   Comment.create(req.body)
     .then(newComment => {
+      console.log(newComment)
       res.send(newComment)
     })
     .catch(err => console.error(err))
